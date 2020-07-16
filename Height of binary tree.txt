@@ -1,0 +1,35 @@
+import java.util.*;
+import java.io.*;
+
+class Node {
+    Node left;
+    Node right;
+    int data;
+    
+    Node(int data) {
+        this.data = data;
+        left = null;
+        right = null;
+    }
+}
+
+class Solution {
+
+	/*
+    class Node 
+    	int data;
+    	Node left;
+    	Node right;
+	*/
+	public static int height(Node root) {
+      	// Write your code here.
+        return height1(root)-1;
+    }
+
+    public static int height1(Node root) {
+        if (root == null) 
+            return 0; 
+        return 1+Math.max(height1(root.left),height1(root.right));
+    }
+
+	public static Node insert(Node root, int data) {
